@@ -1,0 +1,41 @@
+.container {
+    width: 600px;
+    margin: 50px auto 0;
+    background: #fff;
+}
+
+table {
+    margin: 50px 10px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+th {
+    font-weight: bold;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.form-row {
+    width: 200px;
+    margin: 0 auto 20px;
+    text-align:center;
+
+    input{
+        width:50px;
+    }
+
+    label {
+        display: block;
+        width: 100%;
+        padding-bottom:5px;
+    }
+}

@@ -1,18 +1,31 @@
-<input [(ngModel)]="salary" type="number"/>
-<button (click)="calculateInflation()">Calculate Inflation</button>
+<div class="container">
+  <div class="form-row">
+    <label>Salary</label>
+    <input [(ngModel)]="salary" type="number" />
+  </div>
+  <div class="form-row">
+    <label>Year</label>
+    <select [(ngModel)]="selectedYear">
+      <option *ngFor="let year of years">{{year}}</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <button (click)="calculateInflation()">Calculate Inflation</button>
+  </div>
 
-<table>
-  <tr>
-    <th>Year</th>
-    <th>Inflation percentage</th>
-    <th>Salary strength based on inflation</th>
-    <th>Salary should be based on inflation</th>
-  </tr>
-  <tr *ngFor="let year of inflationRate">
-    <td>{{year?.year}}</td>
-    <td>{{year?.percentage}}</td>
-    <td>{{year?.salaryBasedOnInflation | number: '1.1-2'}}</td>
-    <td>{{year?.salaryToHave | number: '1.1-2'}}</td>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <th>Year</th>
+      <th>Inflation percentage</th>
+      <th>Salary strength based on inflation</th>
+      <th>Salary should be based on inflation</th>
+    </tr>
+    <tr *ngFor="let year of inflationRate">
+      <td>{{year?.year}}</td>
+      <td class="align-right">{{year?.percentage | number: '1.2-2'}}%</td>
+      <td class="align-right">{{year?.salaryBasedOnInflation | number: '1.2-2'}}</td>
+      <td class="align-right">{{year?.salaryToHave | number: '1.2-2'}}</td>
+    </tr>
+  </table>
+</div>
 <router-outlet></router-outlet>
